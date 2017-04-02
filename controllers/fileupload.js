@@ -7,11 +7,12 @@ let routes = (upload) => {
     fileuploadRoute.route('/upload')
         .post(language, upload.array('audio'), (req, res) => {
             // check if file send
-            if (req.files !== "" && req.body.name !== "" && req.body.mail !== "" && req.body.title !== "") {
+            if (req.files !== "" && req.body.name !== "" && req.body.mail !== "" && req.body.title !== "" && req.body.meeting !== "") {
                 if (req.files.length >= 1) {
                     let files = []
                     req.files.forEach((file) => {
-                        files.push(new Fichier(file).saveWithDb(req.body.name, req.body.mail, req.body.title))
+                        console.log("dhgds");
+                        files.push(new Fichier(file).saveWithDb(req.body.name, req.body.mail, req.body.title, req.body.description, req.body.meeting))
                     }, this)
                     Promise.all(files).then(result => {
                             // TODO : success redirect

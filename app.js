@@ -41,15 +41,15 @@ let api = require("./controllers/api")()
 app.use("/api/", api)
 
 let fileupload = require("./controllers/fileupload")(upload)
-app.use("/:language/file/", fileupload)
+app.use("/file/", fileupload)
 
 let indexRouter = require("./controllers/index")()
 app.use("/", indexRouter)
 
 
 // Error 404
-app.use((req, res, next) => {
-    res.redirect("/404")
-})
+// app.use((req, res, next) => {
+//     res.redirect("/404")
+// })
 
 app.listen(PORT)

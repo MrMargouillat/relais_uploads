@@ -1,7 +1,7 @@
 let connection = require("../config/db")
 
 
-class Meting {
+class Meeting {
     getAll() {
         return new Promise((resolve, reject) => {
             connection.query("SELECT *  FROM metings", (err, result) => {
@@ -15,4 +15,4 @@ class Meting {
     }
 }
 
-module.exports = Meting
+module.exports = Meeting
