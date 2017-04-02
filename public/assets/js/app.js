@@ -16,24 +16,27 @@ $(document).ready(() => {
         console.log("object");
         e.preventDefault()
             // the script where you handle the form input.
-        let form_data = new FormData(frm)
-        console.log(form_data);
+
+        var formdata = (window.FormData) ? new FormData(frm[0]) : null;
+        var data = (formdata !== null) ? formdata : frm.serialize();
+
         $.ajax({
-            type: frm.attr('method'),
             url: frm.attr('action'),
-            data: form_data, // serializes the form's elements.
+            type: frm.attr('method'),
+            contentType: false, // obligatoire pour de l'upload
+            processData: false, // obligatoire pour de l'upload
+            dataType: 'json', // selon le retour attendu
+            data: data,
             success: (data) => {
-                alert(data); // show response from the php script.
+                console.log(data); // show response from the php script.
             },
             error: (res) => {
                 console.log(res);
-            },
-            cache: false,
-            contentType: false,
-            processData: false
+            }
         });
 
 
     })
+
 
 });
