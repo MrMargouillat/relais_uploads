@@ -42,7 +42,7 @@ input[type="password"] {
 
 .footer {
     margin-top: 50px;
-    background: #6d7986;
+    background: rgba(109, 121, 134, 0.37);
     color: #fff;
     border-top: solid #4caf50 5px;
     padding: 30px;
