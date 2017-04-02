@@ -1,0 +1,98 @@
+/* #4caf50;*/
+
+html {
+    height: 100%;
+}
+
+body {
+    min-height: 100%;
+    padding-top: 70px;
+    /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
+}
+
+.login {
+    margin-top: 50px;
+    text-align: center;
+}
+
+.logo i {
+    font-size: 1.6em;
+    border: 2px solid #333;
+    border-radius: 50%;
+    padding: 15px;
+}
+
+.offset-header {
+    margin-top: -20px
+}
+
+input[type="mail"],
+input[type="text"],
+input[type="password"] {
+    flex: auto;
+    height: inherit;
+    padding: 5px;
+    padding-left: 15px;
+    border: 1px solid rgba(0, 0, 0, 0.6);
+    border-radius: 5px;
+    color: inherit;
+    font-size: 1.25em;
+    background-color: transparent;
+}
+
+.footer {
+    margin-top: 50px;
+    background: #6d7986;
+    color: #fff;
+    border-top: solid #4caf50 5px;
+    padding: 30px;
+}
+
+footer a {
+    color: inherit;
+}
+
+footer a:hover {
+    color: inherit;
+}
+
+.content {
+    height: 100%;
+}
+
+.navbar-custom {
+    background: #4caf50;
+}
+
+.btn-primary:hover {
+    color: #fff;
+    background-color: #f09233;
+    border-color: #f09233;
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: #f09233;
+    border-color: #f09233;
+}
+
+
+/*#8a2aab #f09233 #4caf50*/
+
+
+/* Test */
+
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
+body {
+    background: #1d1f20;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}

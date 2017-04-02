@@ -1,0 +1,51 @@
+<%- include('../../partials/header') %>
+
+        <div class="jumbotron offset-header">
+            <div class="container">
+                <h1 class="display-3">Enter in history!</h1>
+                <p class="lead">Ce site permet aux membres du Relais de La Mémoire de publier leurs documents afin qu'ils se retrouvent plus tard sur le site du relais.</p>
+                <hr class="my-4">
+                <p>Tous les documents recueillis seront traités, triés puis rendu accessible sur le futur site du relais.</p>
+                <p class="lead">
+                    <a class="btn btn-primary btn-lg" href="#publish" role="button">Learn more</a>
+                </p>
+            </div>
+        </div>
+
+        <div id="publish" class="container">
+            <!-- Modal -->
+            <div class="modal-dialog" role="document">
+                <form action="/file/upload" enctype="multipart/form-data" method="POST" >
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Publish</h5>
+                        </div>
+                        <div class="modal-body">
+                                            <div class="form-group">
+                                                <label>Full name</label>
+                                                <input type="text" name="name" class="form-control" placeholder="Nom complet">
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label>Mail</label>
+                                                <input type="email" name="mail" class="form-control" placeholder="Mail">
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label>Title - Description</label>
+                                                <input type="text" name="title" class="form-control" placeholder="Description">
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label>File</label>
+                                                <input type="file" name="audio" multiple >
+                                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                        </div>
+                </form>
+                </div>
+            </div>
+        </div>
+<%- include('../../partials/footer') %>
