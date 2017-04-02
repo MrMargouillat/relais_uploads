@@ -11,24 +11,23 @@ let routes = (upload) => {
                 if (req.files.length >= 1) {
                     let files = []
                     req.files.forEach((file) => {
-                        console.log("dhgds");
                         files.push(new Fichier(file).saveWithDb(req.body.name, req.body.mail, req.body.title, req.body.description, req.body.meeting))
                     }, this)
                     Promise.all(files).then(result => {
                             // TODO : success redirect
-                            res.redirect("/" + req.params.language + "/success")
+                            res.send({})
                         })
                         .catch(err => {
                             throw err
                                 // TODO : err redirect
                         })
                 } else {
-                    res.redirect("/" + req.params.language + "/error")
+                    res.status(400).send({ text: "no such file" })
                 }
 
             } else {
                 console.log("field");
-                res.redirect("/" + req.params.language + "/error")
+                res.status(400).send({})
             }
 
         })
