@@ -1,11 +1,10 @@
 let express = require("express")
 const Fichier = require("../models/fichier")
-let language = require("../middlewares/language")
 
 let routes = (upload) => {
     let fileuploadRoute = express.Router()
     fileuploadRoute.route('/upload')
-        .post(language, upload.array('audio'), (req, res) => {
+        .post(upload.array('audio'), (req, res) => {
             // check if file send
             if (req.files !== "" && req.body.name !== "" && req.body.mail !== "" && req.body.title !== "" && req.body.meeting !== "") {
                 if (req.files.length >= 1) {
@@ -15,19 +14,28 @@ let routes = (upload) => {
                     }, this)
                     Promise.all(files).then(result => {
                             // TODO : success redirect
-                            res.send({})
+                            res.send(true)
                         })
                         .catch(err => {
                             throw err
                                 // TODO : err redirect
                         })
                 } else {
-                    res.status(400).send({ text: "no such file" })
+                    res.status(400).send({
+                        en: "Please select at least one file.",
+                        pl: "Please select at least one file.",
+                        de: "Please select at least one file.",
+                        fr: "Veuillez tout remplir.",
+                    })
                 }
 
             } else {
-                console.log("field");
-                res.status(400).send({})
+                res.status(400).send({
+                    en: "Please fill every thing.",
+                    de: "Please fill every thing.",
+                    pl: "Please fill every thing.",
+                    fr: "Veuillez tout remplir.",
+                })
             }
 
         })

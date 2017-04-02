@@ -10,16 +10,28 @@ $(document).ready(() => {
         .fail(() => {
             alert("Erreur")
         })
-    let frm = $('#form_file')
 
+
+    $('#form_file [dt-require]').blur(function(e) {
+
+        if (e.target.value === "") {
+            $(this).addClass("form-control-danger")
+            $(this).parent("div").addClass("has-danger")
+        } else {
+            $(this).removeClass("form-control-danger")
+            $(this).parent("div").removeClass("has-danger")
+        }
+    });
+
+
+
+    let frm = $('#form_file')
     frm.submit((e) => {
-        console.log("object");
         e.preventDefault()
             // the script where you handle the form input.
 
         var formdata = (window.FormData) ? new FormData(frm[0]) : null;
         var data = (formdata !== null) ? formdata : frm.serialize();
-
         $.ajax({
             url: frm.attr('action'),
             type: frm.attr('method'),
@@ -30,10 +42,12 @@ $(document).ready(() => {
             success: (data) => {
                 console.log(data); // show response from the php script.
             },
-            error: (res) => {
-                console.log(res);
+            error: (data) => {
+                let msg = '<div class="alert alert-danger" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button><span class="lnr lnr-warning"></span> Veuillez tout remplir.</div>'
+                $("#publish").prepend(msg)
+
             }
-        });
+        })
 
 
     })
