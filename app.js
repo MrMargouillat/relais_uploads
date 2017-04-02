@@ -37,9 +37,11 @@ app.use(bodyParser.json())
 
 
 // Routes
+let api = require("./controllers/api")()
+app.use("/api/", api)
 
-let api = require("./controllers/fileupload")(upload)
-app.use("/:language/file/", api)
+let fileupload = require("./controllers/fileupload")(upload)
+app.use("/:language/file/", fileupload)
 
 let indexRouter = require("./controllers/index")()
 app.use("/", indexRouter)
