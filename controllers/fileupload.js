@@ -21,7 +21,7 @@ let routes = (upload) => {
                                 // TODO : err redirect
                         })
                 } else {
-                    res.status(400).send({
+                    res.status(400).json({
                         en: "Please select at least one file.",
                         pl: "Please select at least one file.",
                         de: "Please select at least one file.",
@@ -30,7 +30,7 @@ let routes = (upload) => {
                 }
 
             } else {
-                res.status(400).send({
+                res.status(400).json({
                     en: "Please fill every thing.",
                     de: "Please fill every thing.",
                     pl: "Please fill every thing.",
