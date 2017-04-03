@@ -14,7 +14,7 @@ class Fichier {
     }
 
 
-    saveWithDb(user_name, user_mail, title) {
+    saveWithDb(user_name, user_mail, title, describe, meeting) {
         let name = this.file.filename
         return new Promise((resolve, reject) => {
             connection.query('INSERT INTO uploads SET ?', {
@@ -22,6 +22,8 @@ class Fichier {
                     "user_mail": user_mail,
                     "file_name": name,
                     "title": title,
+                    "description": describe,
+                    "meeting": meeting,
                     "upload_date": new Date()
                 },
                 (err, result) => {

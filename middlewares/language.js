@@ -1,10 +1,18 @@
-function language(req, res, next) {
-    let lang = ["fr", "en", "pl", "de"]
-    res.locals.language = req.params.language
-    if (!lang.slice(req.params.language)) {
-        res.redirect("/404")
+var i18n = require('i18n');
+
+function middleWare(dir) {
+    i18n.configure({
+        locales: ['en', 'fr', 'de'],
+        directory: dir,
+        defaultLocale: 'en',
+    });
+
+    return function language(req, res, next) {
+        i18n.init(req, res)
+        i18n.setLocale(req, req.params.language)
+        next()
     }
-    next()
 }
 
-module.exports = language
+
+module.exports = middleWare

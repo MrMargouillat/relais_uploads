@@ -1,0 +1,63 @@
+<%- include('../partials/header') %>
+
+        <div class="jumbotron offset-header">
+            <div class="container">
+                <h1 class="display-3"><%= __('Entrez dans l\'hitoire')%></h1>
+                <p class="lead"><%= __('Ce site permet aux membres du Relais de La Mémoire de publier leurs documents afin qu\'ils se retrouvent plus tard sur le site du relais.')%></p>
+                <hr class="my-4">
+                <p><%= __('Tous les documents recueillis seront traités, triés puis rendu accessible sur le futur site du relais.')%></p>
+                <p class="lead">
+                    <a class="btn btn-primary btn-lg" href="#publish" role="button"><%= __('Learn more')%></a>
+                </p>
+            </div>
+        </div>
+
+        <div id="publish" class="container">
+            <!-- Modal -->
+            <div class="modal-dialog" role="document">
+                <form action="/api/file" enctype="multipart/form-data" method="POST" id="form_file" >
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel"><%= __('Publish')%></h5>
+                        </div>
+                        <div class="modal-body">
+                                            <div class="form-group ">
+                                                <label><%= __('Full name')%></label>
+                                                <input dt-require type="text" name="name" class="form-control" placeholder="<%= __('Full name')%>">
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label><%= __('Mail')%></label>
+                                                <input dt-require type="email" name="mail" class="form-control" placeholder="<%= __('Mail')%>">
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label><%= __('Title')%></label>
+                                                <input dt-require type="text" name="title" class="form-control" placeholder="<%= __('Title')%>">
+                                            </div>
+
+											<div class="form-group">
+												<label for="meetings"><%= __('Meeting')%></label>
+												<select class="form-control" id="meetings" name="meeting">
+												</select>
+											</div>
+
+											<div class="form-group">
+                                                <label><%= __('Description (optional)')%></label>
+                                                <input type="text" name="description" class="form-control" placeholder="<%= __('Description')%>">
+                                            </div>
+
+
+                                            <div class="form-group">
+                                                <label><%= __('File')%></label>
+                                                <input type="file" name="audio" multiple >
+                                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="submit" class="btn btn-primary"><%= __('Submit')%></button>
+                        </div>
+                </form>
+                </div>
+            </div>
+        </div>
+<%- include('../partials/footer') %>
