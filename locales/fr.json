@@ -1,7 +1,21 @@
 {
-	"Hello i18n": "Bonjour i18n",
-	"Entrez dans l'hitoire": "Entrez dans l'hitoire",
-	"Ce site permet aux membres du Relais de La Mémoire de publier leurs documents afin qu'ils se retrouvent plus tard sur le site du relais.": "Ce site permet aux membres du Relais de La Mémoire de publier leurs documents afin qu'ils se retrouvent plus tard sur le site du relais.",
-	"Tous les documents recueillis seront traités, triés puis rendu accessible sur le futur site du relais.": "Tous les documents recueillis seront traités, triés puis rendu accessible sur le futur site du relais.",
-	"Learn more": "Learn more"
+    "Enter in history!": "Entrez dans l'hitoire",
+    "desc1": "Ce site permet aux membres du Relais de La Mémoire de publier leurs documents afin qu'ils se retrouvent plus tard sur le site du relais.",
+    "desc2": "Tous les documents recueillis seront traités, triés puis rendu accessible sur le futur site du relais.",
+    "Learn more": "En savoir plus",
+    "Publish": "Publier",
+    "Language": "Langues",
+    "French": "Français",
+    "English": "Anglais",
+    "German": "Allemand",
+    "Polish": "Polonais",
+    "Full name": "Nom complet",
+    "Mail": "Mail",
+    "Title": "Titre",
+    "Meeting": "Meeting",
+    "Description (optional)": "Description (optionnel)",
+    "Description": "Description",
+    "File": "Fichier",
+    "Submit": "Publier",
+    "Report a bug": "Signaler un bug"
 }

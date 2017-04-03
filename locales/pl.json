@@ -1,9 +1,14 @@
 {
-    "Enter in history!": "Enter in history!",
+    "Publish": "Publish",
+    "Language": "Language",
+    "French": "French",
+    "English": "English",
+    "German": "German",
+    "Polish": "Polish",
+    "Entrez dans l'hitoire": "Entrez dans l'hitoire",
     "desc1": "This website allows members of the Relais de la Mémoire to publish there documents in order to share them on the futur site of Relais.",
     "desc2": "All documents will be treated, filtered then share to public on the futur website.",
     "Learn more": "Learn more",
-    "Publish": "Publish",
     "Full name": "Full name",
     "Mail": "Mail",
     "Title": "Title",
@@ -12,10 +17,6 @@
     "Description": "Description",
     "File": "File",
     "Submit": "Submit",
-    "Language": "Language",
-    "French": "French",
-    "English": "English",
-    "German": "German",
-    "Polish": "Polish",
     "Report a bug": "Report a bug",
+    "Enter in history!": "Enter in history!"
 }
