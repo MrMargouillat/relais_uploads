@@ -2,7 +2,8 @@
 let express = require("express")
 let bodyParser = require('body-parser')
 let  cookieSession  = require('cookie-session')
-var multer = require('multer')
+let multer = require('multer')
+let langMiddleware = require('./middlewares/language')
 var storage = multer.diskStorage({
     destination: (req, file, cb) => {
         cb(null, 'uploads/')
@@ -11,6 +12,7 @@ var storage = multer.diskStorage({
         cb(null, Date.now() + "_" + file.originalname)
     }
 })
+
 
 
 let upload = multer({
@@ -41,7 +43,7 @@ let api = require("./controllers/api")(upload)
 app.use("/api/", api)
 
 
-let indexRouter = require("./controllers/index")()
+let indexRouter = require("./controllers/index")(langMiddleware(__dirname + '/locales'))
 app.use("/", indexRouter)
 
 
