@@ -47,9 +47,17 @@ let indexRouter = require("./controllers/index")()
 app.use("/", indexRouter)
 
 
-// Error 404
-// app.use((req, res, next) => {
-//     res.redirect("/404")
-// })
+// custom 404 page
+app.use((req, res) => {
+    res.type('text/plain');
+    res.status(404).send('404 - Not Found');
+});
+
+// custom 500 page
+app.use((err, req, res, next) => {
+    console.error(err.stack);
+    res.type('text/plain');
+    res.status(500).send('500 - Server Error');
+});
 
 app.listen(PORT)
