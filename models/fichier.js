@@ -1,7 +1,7 @@
 let connection = require("../config/db")
 let fs = require("fs")
-let meetings = require("./meetings")
-
+let Meetings = require("./meetings")
+let meetings = new Meetings
 
 
 class Fichier {
@@ -28,24 +28,31 @@ class Fichier {
 
 
     saveWithDb(user_name, user_mail, title, describe, meeting) {
-        let name = this.file.filename
-        this.moveTmp(2017, "Paris")
-        return
-        // return new Promise((resolve, reject) => {
-        //     connection.query('INSERT INTO uploads SET ?', {
-        //             "user_name": user_name,
-        //             "user_mail": user_mail,
-        //             "file_name": name,
-        //             "title": title,
-        //             "description": describe,
-        //             "meeting": meeting,
-        //             "upload_date": new Date()
-        //         },
-        //         (err, result) => {
-        //             if (err) throw err
-        //             resolve(result)
-        //         });
-        // })
+        return new Promise((resolve, reject) => {
+
+            let name = this.file.filename
+            meetings.selectById(meeting).then((res) => {
+                res = res[0]
+                this.moveTmp(res.year, res.place).then(() => {
+
+                })
+                connection.query('INSERT INTO uploads SET ?', {
+                        "user_name": user_name,
+                        "user_mail": user_mail,
+                        "file_name": name,
+                        "title": title,
+                        "description": describe,
+                        "meeting": meeting,
+                        "upload_date": new Date()
+                    },
+                    (err, result) => {
+                        if (err) throw err
+                        resolve(result)
+                    });
+            })
+
+
+        })
     }
 }
 
