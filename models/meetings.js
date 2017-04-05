@@ -16,6 +16,18 @@ class Meeting {
             })
         })
     }
+
+    selectById(id) {
+        return new Promise((resolve, reject) => {
+            connection.query("SELECT *  FROM meetings WHERE id = ?", [id], (err, result) => {
+                if (err) {
+                    throw err
+                    reject(err)
+                }
+                resolve(result)
+            })
+        })
+    }
     getByLanguage(language) {
         return new Promise((resolve, reject) => {
             let q
@@ -38,6 +50,7 @@ class Meeting {
 
                 default:
                     reject()
+                    return;
                     break;
             }
 

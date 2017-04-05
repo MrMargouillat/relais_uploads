@@ -1,14 +1,15 @@
 $(document).ready(() => {
-    $.ajax("http://localhost:8080/api/meetings/")
+    let lang = $("html").attr("lang")
+    $.ajax("http://localhost:8080/api/meetings/" + lang)
         .done(data => {
             let meetings = $("#meetings")
             data.forEach(el => {
-                let str = el.year + " " + el.place
+                let str = el.year + ": " + el.theme + " - " + el.place
                 meetings.append("<option value='" + el.id + "' >" + str + "</option>")
             })
         })
         .fail(() => {
-            alert("Erreur")
+            alert("Erreur dans le chargement des meetings.")
         })
 
 
