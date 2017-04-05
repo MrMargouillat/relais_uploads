@@ -29,7 +29,6 @@ class Fichier {
 
     saveWithDb(user_name, user_mail, title, describe, meeting) {
         return new Promise((resolve, reject) => {
-
             let name = this.file.filename
             meetings.selectById(meeting).then((res) => {
                 res = res[0]
