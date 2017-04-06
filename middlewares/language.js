@@ -2,7 +2,7 @@ var i18n = require('i18n');
 
 function middleWare(dir) {
     i18n.configure({
-        locales: ['en', 'fr', 'de'],
+        locales: ['en', 'fr', 'de', 'pl'],
         directory: dir,
         defaultLocale: 'en',
     });

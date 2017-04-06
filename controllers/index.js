@@ -8,10 +8,7 @@ let routes = (language) => {
         .get((req, res) => {
             res.redirect('/en')
         })
-    indexRouter.route('/:language(en|fr|de|pl)/error')
-        .get(language, (req, res) => {
-            res.status(500).render("pages/error")
-        })
+
     indexRouter.route('/:language(en|fr|de|pl)')
         .get(language, (req, res) => {
             res.render("pages/relaisupload", function(err, html) {
@@ -31,14 +28,10 @@ let routes = (language) => {
             })
         })
 
+
     indexRouter.route('/:language(en|fr|de|pl)/error')
         .get(language, (req, res) => {
-            res.render("pages/error", function(err, html) {
-                if (err) {
-                    res.redirect("/" + req.params.language + "/error")
-                }
-                res.send(html)
-            })
+            res.status(500).render("pages/error")
         })
 
 

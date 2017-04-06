@@ -2,14 +2,35 @@
 
 <div class="jumbotron offset-header">
             <div class="container">
-                <h1 class="display-3"> <span class="lnr lnr-smile"></span> Thank you!</h1>
+                <h1 class="display-1"><span class="lnr lnr-smile"></h1>
+                <h1 class="display-3"><%= __('Thank you!') %></h1>
                 <p class="lead">Ce site permet aux membres de relais de publier leurs documents afin qu'ils se retrouvent plus tard sur le site du relais.</p>
 
-                <p class="lead">
-                    <a class="btn btn-primary btn-lg" href="/" role="button">Submit more!</a>
-                </p>
+
             </div>
         </div>
+</div>
+<div class="container">
+	<div class="row">
+	<div class="col-sm-6">
+		<div class="card">
+		<div class="card-block">
+			<h3 class="card-title"><%= __('Keep going') %></h3>
+			<p class="card-text"><%= __('You already did a lot by submiting. If you still have something, submit it.') %></p>
+			<a class="btn btn-primary" href="/" role="button"><%= __('Submit more') %></a>
+		</div>
+		</div>
+	</div>
+	<div class="col-sm-6">
+		<div class="card">
+		<div class="card-block">
+			<h3 class="card-title"><%= __('Learn more') %></h3>
+			<p class="card-text"><%= __('Learn more about me and my work. This is also the way if you want to help the website working group.') %></p>
+			<a href="#" class="btn btn-primary"><%= __('Support us') %></a>
+		</div>
+		</div>
+	</div>
+	</div>
 </div>
 
 <%- include('../partials/footer')  %>

@@ -6,13 +6,14 @@ let multer = require('multer')
 let langMiddleware = require('./middlewares/language')
 var storage = multer.diskStorage({
     destination: (req, file, cb) => {
-        cb(null, 'uploads/')
+        cb(null, 'uploads/tmp/')
     },
     filename: (req, file, cb) => {
         cb(null, Date.now() + "_" + file.originalname)
     }
 })
 
+global.__base = __dirname + '/';
 
 
 let upload = multer({

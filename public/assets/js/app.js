@@ -1,14 +1,15 @@
 $(document).ready(() => {
-    $.ajax("http://localhost:8080/api/meetings/")
+    let lang = $("html").attr("lang")
+    $.ajax("http://localhost:8080/api/meetings/" + lang)
         .done(data => {
             let meetings = $("#meetings")
             data.forEach(el => {
-                let str = el.year + " " + el.place
+                let str = el.year + ": " + el.theme + " - " + el.place
                 meetings.append("<option value='" + el.id + "' >" + str + "</option>")
             })
         })
         .fail(() => {
-            alert("Erreur")
+            alert("Erreur dans le chargement des meetings.")
         })
 
 
@@ -40,7 +41,7 @@ $(document).ready(() => {
             dataType: 'json', // selon le retour attendu
             data: data,
             success: (data) => {
-                console.log(data); // show response from the php script.
+                window.location.href = lang + "/success"
             },
             error: (data) => {
                 let msg = '<div class="alert alert-danger" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button><span class="lnr lnr-warning"></span> Veuillez tout remplir.</div>'

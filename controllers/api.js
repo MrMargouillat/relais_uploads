@@ -51,6 +51,16 @@ let routes = (upload) => {
                     res.status(404).send(err)
                 })
         })
+    api.route('/meetings/:language')
+        .get((req, res) => {
+            let met = new Meeting
+            met.getByLanguage(req.params.language).then(result => {
+                    res.send(result)
+                })
+                .catch(err => {
+                    res.status(404).send(err)
+                })
+        })
 
     return api
 }
