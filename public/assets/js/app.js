@@ -41,7 +41,7 @@ $(document).ready(() => {
             dataType: 'json', // selon le retour attendu
             data: data,
             success: (data) => {
-                console.log(data); // show response from the php script.
+                window.location.href = lang + "/success"
             },
             error: (data) => {
                 let msg = '<div class="alert alert-danger" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button><span class="lnr lnr-warning"></span> Veuillez tout remplir.</div>'
