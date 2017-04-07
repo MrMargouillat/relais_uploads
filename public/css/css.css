@@ -1,5 +1,13 @@
 /* #4caf50;*/
 
+@font-face {
+    font-family: 'icomoon';
+    src: url('../fonts/icomoon.eot?o7wsnc');
+    src: url('../fonts/icomoon.eot?o7wsnc#iefix') format('embedded-opentype'), url('../fonts/icomoon.ttf?o7wsnc') format('truetype'), url('../fonts/icomoon.woff?o7wsnc') format('woff'), url('../fonts/icomoon.svg?o7wsnc#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
 html {
     height: 100%;
 }
@@ -99,4 +107,47 @@ img {
 
 .footer_credits {
     height: 50px;
+}
+
+.share {
+    padding: 0 17px 0 50px;
+    line-height: 40px;
+    color: white;
+    text-decoration: none;
+    display: inline-block;
+    margin-right: 3px;
+    position: relative;
+    border: none;
+    cursor: pointer;
+}
+
+.share:before {
+    font-family: 'icomoon';
+    color: white;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 40px;
+    font-size: 16px;
+    text-align: center;
+    line-height: 40px;
+}
+
+.share_twitter {
+    background: #0074a1;
+}
+
+.share_twitter:before {
+    background: #00aced;
+    content: "\e901";
+}
+
+.share_facebook {
+    background: #263961;
+}
+
+.share_facebook:before {
+    background: #3b5998;
+    content: "\e900";
 }
