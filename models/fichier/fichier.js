@@ -5,13 +5,9 @@ let meetings = new Meetings
 
 
 class Fichier {
-    constructor(file = undefined) {
+    constructor(file) {
         console.log(file);
         this.file = file;
-    }
-
-    inputFile(file) {
-        this.file = this.file || file;
     }
 
     moveTmp(year, place) {
