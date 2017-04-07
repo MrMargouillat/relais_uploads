@@ -1,6 +1,6 @@
-let connection = require("../config/db")
+let connection = require("../../config/db")
 let fs = require("fs")
-let Meetings = require("./meetings")
+let Meetings = require("../meetings/meetings")
 let meetings = new Meetings
 
 

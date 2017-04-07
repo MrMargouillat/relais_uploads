@@ -1,6 +1,5 @@
-let connection = require("../config/db")
-let renameProperty = require("../helpers/renameProperty")
-
+let connection = require("../../config/db")
+let renameProperty = require("../../helpers/renameProperty")
 
 
 
@@ -24,7 +23,7 @@ class Meeting {
                     throw err
                     reject(err)
                 }
-                resolve(result)
+                resolve(result[0])
             })
         })
     }
@@ -75,5 +74,4 @@ class Meeting {
 
 
 }
-
 module.exports = Meeting
