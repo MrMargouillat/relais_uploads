@@ -7,7 +7,6 @@
         "prestart": "npm test",
         "share": "npm-run-all --parallel start localtunnel",
         "start": "nodemon app.js",
-        "babelstart": "nodemon app.js --exec babel-node",
         "security-check": "nsp check",
         "localtunnel": "lt --port 8080 --subdomain mrdev",
         "test": "mocha --reporter progress \"./**/*.spec.js\" "
