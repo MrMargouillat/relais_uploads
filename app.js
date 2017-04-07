@@ -1,7 +1,6 @@
 // Requires
 let express = require("express")
 let bodyParser = require('body-parser')
-let  cookieSession  = require('cookie-session')
 let multer = require('multer')
 let langMiddleware = require('./middlewares/language')
 var storage = multer.diskStorage({

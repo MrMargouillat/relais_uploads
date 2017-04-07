@@ -1,6 +1,6 @@
 let express = require("express")
-let Meeting = require("../models/meetings")
-const Fichier = require("../models/fichier")
+const Meeting = require("../models/meetings/meetings")
+const Fichier = require("../models/fichier/fichier")
 
 let routes = (upload) => {
     let api = express.Router()
